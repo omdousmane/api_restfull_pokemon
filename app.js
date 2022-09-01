@@ -27,7 +27,7 @@ require("./src/routes/deletePokemon")(app);
 require("./src/routes/login")(app);
 
 // on ajoute une gestion des erreurs 404
-app.use(({ res }) => {
+app.use(({ req, res }) => {
   const message =
     "impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL";
   res.status(404).json({ message });
